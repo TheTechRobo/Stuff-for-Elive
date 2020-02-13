@@ -1,3 +1,4 @@
+#!/bin/sh
 echo "This program will require root access."
 
 echo "WARNING: the program will need to delete the previous pulseaudio configuration to permit music over bluetooth speaker!"
