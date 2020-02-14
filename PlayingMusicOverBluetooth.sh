@@ -59,7 +59,7 @@ clear
 echo "Please configure your bluetooth device"
 zenity --info --text="Please configure your bluetooth device"
 
-blueman-applet
+blueman-applet &; disown
 
 echo "You can reopen blueman-applet in your menu."
 zenity --info --text="You can re-open blueman-applet in your menu!"
