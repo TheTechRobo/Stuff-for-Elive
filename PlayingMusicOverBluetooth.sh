@@ -10,13 +10,13 @@ input1=$?
 case $input1 in
     1)
         echo "The program will exit. The user cannot grant the needed privileges!"
-        zenity --error --text="The script will exit. The user cannot grant the needed privileges!"
+        zenity --error --text="The script will exit as the user cannot grant the necessary privileges."
         exit 1
         ;;
     0)
         ;;
 esac
-echo "Will now install the needed dependencies!"
+echo "The script will now install the needed dependencies."
 
 ########INSTALLING DEPENDENCIES#######################
 sudo -A apt-get update
@@ -31,8 +31,8 @@ sudo -A service connman stop
 echo "Starting connman service..."
 sudo -A service connman start
 
-echo "Make sure your bluetooth is turned on."
-zenity --info --text="Make sure your bluetooth is turned on."
+echo "Make sure your Bluetooth is turned on."
+zenity --info --text="Make sure your Bluetooth is turned on."
 connman-gtk
 
 echo "Removing previous pulseaudio configuration..."
@@ -47,7 +47,7 @@ echo "Downloading music Sample..."
 wget https://sample-videos.com/audio/mp3/crowd-cheering.mp3
 
 echo "Playing music sample..."
-zenity --info --text="Do not get scared... I will play an mp3 file. You will supposedly hear a crowd cheering"
+zenity --info --text="About to play an audio sample. You will supposedly hear a crowd cheering. This is completely normal."
 cvlc crowd-cheering.mp3&
 sleep 10
 killall vlc
@@ -56,13 +56,13 @@ rm crowd-cheering.mp3
 
 #### blueman ####
 clear
-echo "Please configure your bluetooth device"
-zenity --info --text="Please configure your bluetooth device"
+echo "Please configure your Bluetooth device."
+zenity --info --text="Please configure your Bluetooth device."
 
 blueman-applet &; disown
 
 echo "You can reopen blueman-applet in your menu."
-zenity --info --text="You can re-open blueman-applet in your menu!"
+zenity --info --text="You can re-open blueman-applet in your menu."
 
 exit 0
 
